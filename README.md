@@ -1,9 +1,8 @@
 # HorasCLI
-
 Simple CLI program to create a project hour schedule.
 
 # Install
-pip install .
+Execute the .bat file in windows or the .sh file in linux
 
 # Use
 Help about use with
