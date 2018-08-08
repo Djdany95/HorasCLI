@@ -59,7 +59,6 @@ def delete_last_line():
         file.close()
 
     lines = lines[0:len(lines)-1]
-    print(lines)
     with open(schedule_file, 'w') as file:
         for line in lines:
             file.write(line)
