@@ -15,23 +15,19 @@ def get_errors():
                     /_/ /_/ \____//_/    \__,_//____/ \____//_____//___/
 
                     Usage:
-                    horas -h | --help 'Muestra esta ayuda'
-                    horas -s | --show 'Abre el registro en Chrome si esta instalado o en la linea de comandos'
-                    horas -r | --reset 'Resetea el registro'
-                    horas -n | --new <project name> <hours> 'Crea una fila en el registro con el dia de hoy'
-                    horas -n | --new <project name> <hours> <date (dd-mm)> 'Crea una fila en el registro con el dia que le pasemos'
-                    horas -d | --delete 'Elimina la ultima fila del registro'
+                    horas -h | --help
+                        'Muestra esta ayuda'
+                    horas -s | --show
+                        'Abre el registro en Chrome si esta instalado o en la linea de comandos'
+                    horas -r | --reset
+                        'Resetea el registro'
+                    horas -n | --new <project name> <hours>
+                        'Crea una fila en el registro con el dia de hoy'
+                    horas -n | --new <project name> <hours> <date (dd-mm)>
+                        'Crea una fila en el registro con el dia que le pasemos'
+                    horas -d | --delete
+                        'Elimina la ultima fila del registro'
                     """
-        command_error = """
-                            __  __                           ______ __     ____
-                           / / / /____   _____ ____ _ _____ / ____// /    /  _/
-                          / /_/ // __ \ / ___// __ `// ___// /    / /     / /
-                         / __  // /_/ // /   / /_/ /(__  )/ /___ / /___ _/ /
-                        /_/ /_/ \____//_/    \__,_//____/ \____//_____//___/
-
-                        Error: No se ha encontrado el comando o es invalido.
-                        Try horas -h | --help 'Muestra la ayuda'
-                        """
         chrome_error = """
                             __  __                           ______ __     ____
                            / / / /____   _____ ____ _ _____ / ____// /    /  _/
@@ -50,23 +46,19 @@ def get_errors():
                     /_/ /_/ \____//_/    \__,_//____/ \____//_____//___/
 
                     Usage:
-                    horas -h | --help 'Shows this help'
-                    horas -s | --show 'Opens the schedule in Chrome if exists or as command line'
-                    horas -r | --reset 'Resets the schedule'
-                    horas -n | --new <project name> <hours> 'Adds row to the schedule with today date'
-                    horas -n | --new <project name> <hours> <date (dd-mm)> 'Adds row to the schedule with the given date'
-                    horas -d | --delete 'Deletes the last row added'
+                    horas -h | --help
+                        'Shows this help'
+                    horas -s | --show
+                        'Opens the schedule in Chrome if exists or as command line'
+                    horas -r | --reset
+                        'Resets the schedule'
+                    horas -n | --new <project name> <hours>
+                        'Adds row to the schedule with today date'
+                    horas -n | --new <project name> <hours> <date (dd-mm)>
+                        'Adds row to the schedule with the given date'
+                    horas -d | --delete
+                        'Deletes the last row added'
                     """
-        command_error = """
-                            __  __                           ______ __     ____
-                           / / / /____   _____ ____ _ _____ / ____// /    /  _/
-                          / /_/ // __ \ / ___// __ `// ___// /    / /     / /
-                         / __  // /_/ // /   / /_/ /(__  )/ /___ / /___ _/ /
-                        /_/ /_/ \____//_/    \__,_//____/ \____//_____//___/
-
-                        Error: Command not found or invalid.
-                        Try horas -h | --help 'Shows help'
-                        """
         chrome_error = """
                             __  __                           ______ __     ____
                            / / / /____   _____ ____ _ _____ / ____// /    /  _/
@@ -76,7 +68,7 @@ def get_errors():
 
                         Install Chrome and Markdown Reader extension to get the best visualization.
                         """
-    return {'help_msg': help_msg, 'command_error': command_error, 'chrome_error': chrome_error}
+    return {'help_msg': help_msg, 'chrome_error': chrome_error}
 
 
 def get_OS():
