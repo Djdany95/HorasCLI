@@ -11,10 +11,10 @@ now = datetime.datetime.now()
 schedule_file = str(Path.home())+'/projectsSchedule.md'
 
 # ARGS
-# 1 COMMAND
+# 1 OPTION
 # 2 PROJECT
 # 3 HOURS
-# 4 DATE OPTIONAL
+# 4 DATE (OPTIONAL)
 num_args = len(sys.argv)
 
 
@@ -61,7 +61,7 @@ def new_horas():
     elif num_args == 4:
         nueva_fila = '| ' + \
             sys.argv[2] + ' | ' + sys.argv[3] + \
-            'h | ' + now.strftime("%d-%m") + ' |\n'
+            'h | ' + now.strftime("%d/%m") + ' |\n'
     else:
         raise Exception()
 
