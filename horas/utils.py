@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from sys import platform
+from platform import system as os
 import locale
 import ctypes
 
@@ -72,15 +72,15 @@ def get_errors():
 
 
 def get_OS():
-    if platform in ("linux", "linux2"):
+    if os == 'Linux':
         # Linux
         chrome_path = '/usr/bin/google-chrome %s'
         lang = locale.getlocale(locale.LC_MESSAGES)[0]
-    elif platform == "darwin":
+    elif os == "Darwin":
         # MacOs
         chrome_path = 'open -a /Applications/Google\ Chrome.app %s'
         lang = locale.getlocale(locale.LC_MESSAGES)[0]
-    elif platform in ("win32", "win64", "windows"):
+    elif os == 'Windows':
         # Windows
         chrome_path = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s"
         lang = locale.windows_locale[ctypes.windll.kernel32.GetUserDefaultUILanguage(
