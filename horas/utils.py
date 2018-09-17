@@ -72,15 +72,15 @@ def get_errors():
 
 
 def get_OS():
-    if os == 'Linux':
+    if os() == 'Linux':
         # Linux
         chrome_path = '/usr/bin/google-chrome %s'
         lang = locale.getlocale(locale.LC_MESSAGES)[0]
-    elif os == "Darwin":
+    elif os() == "Darwin":
         # MacOs
         chrome_path = 'open -a /Applications/Google\ Chrome.app %s'
         lang = locale.getlocale(locale.LC_MESSAGES)[0]
-    elif os == 'Windows':
+    elif os() == 'Windows':
         # Windows
         chrome_path = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s"
         lang = locale.windows_locale[ctypes.windll.kernel32.GetUserDefaultUILanguage(
