@@ -2,16 +2,18 @@
 
 Simple CLI program to create a project hour schedule in markdown.
 
-# Install
+## Install
 
-Execute the .bat file in windows or the .sh file in linux and MacOS
+- Pip method [horasCLI](https://pypi.org/project/horasCLI/)
+  - Open your terminal and type: `pip install horasCLI`
+- Clone repository method
+  - Clone this repository
+  - Go to the folder through terminal or open the terminal there and type `pip install -e .`
 
-# Use
+## Use
 
-Help about use with
-horas -h or horas --help
+To get help about use type: `horas -h` or `horas --help`
 
-### TODOs
+### TODO
 
-- [ ] Test in Linux
-- [ ] MacOS compatibility
+- Test in Linux and MacOS

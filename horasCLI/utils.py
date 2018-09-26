@@ -5,7 +5,9 @@ import locale
 import ctypes
 
 
+# -------------------------------------------
 def get_errors():
+    """Returns the help_msg and chrome_error based on language"""
     if("es" in get_OS().get('lang')):
         help_msg = """
                         __  __                           ______ __     ____
@@ -71,7 +73,9 @@ def get_errors():
     return {'help_msg': help_msg, 'chrome_error': chrome_error}
 
 
+# -------------------------------------------
 def get_OS():
+    """Get the OS and returns the path to chrome in that OS and the language"""
     if os() == 'Linux':
         # Linux
         chrome_path = '/usr/bin/google-chrome %s'

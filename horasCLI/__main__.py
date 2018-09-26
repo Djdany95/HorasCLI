@@ -5,8 +5,11 @@ import webbrowser
 import datetime
 import os.path
 from pathlib import Path
-from utils import get_OS, get_errors
+from . import utils
 
+
+# -------------------------------------------
+# Get today date and the file
 now = datetime.datetime.now()
 schedule_file = str(Path.home())+'/projectsSchedule.md'
 
@@ -18,14 +21,18 @@ schedule_file = str(Path.home())+'/projectsSchedule.md'
 num_args = len(sys.argv)
 
 
+# -------------------------------------------
 def check_horas_file():
+    """If the file doesn't exists, creates it"""
     if not os.path.exists(schedule_file):
         reset_horas()
 
 
+# -------------------------------------------
 def reset_horas():
+    """Creates from 0 the new file based on language"""
     with open(schedule_file, 'w', encoding='UTF-8') as file:
-        if("es" in get_OS().get('lang')):
+        if("es" in utils.get_OS().get('lang')):
             file.write('## Registro de Proyectos\n\n')
             file.write('| Proyecto | Horas |   Dia  |\n')
             file.write('|----------|:-----:|:------:|\n')
@@ -36,15 +43,17 @@ def reset_horas():
         file.close()
 
 
+# -------------------------------------------
 def show_horas():
-    chrome_path = Path(get_OS().get('chrome'))
+    """If chrome installed, open the file on it, else shows it on the terminal"""
+    chrome_path = Path(utils.get_OS().get('chrome'))
     try:
         chrome_path.is_dir()
-        chrome = get_OS().get('chrome')
+        chrome = utils.get_OS().get('chrome')
         webbrowser.get(chrome).open(
             'file:///'+schedule_file)
     except webbrowser.Error:
-        print(get_errors().get('chrome_error'))
+        print(utils.get_errors().get('chrome_error'))
         with open(schedule_file, 'r') as file:
             lines = file.readlines()
             for line in lines:
@@ -54,7 +63,9 @@ def show_horas():
         raise Exception()
 
 
+# -------------------------------------------
 def new_horas():
+    """Add a new line with the info passed in arguments"""
     if num_args == 5:
         nueva_fila = '| ' + sys.argv[2] + ' | ' + \
             sys.argv[3] + 'h | ' + sys.argv[4] + ' |\n'
@@ -70,7 +81,9 @@ def new_horas():
         file.close()
 
 
+# -------------------------------------------
 def delete_last_horas():
+    """Deletes last line"""
     with open(schedule_file, 'r') as file:
         lines = file.readlines()
         file.close()
@@ -82,7 +95,9 @@ def delete_last_horas():
         file.close()
 
 
+# -------------------------------------------
 def main():
+    """Check if file exists and do what is passed in args"""
     check_horas_file()
     try:
         if (sys.argv[1] in ['-s', '--show']):
@@ -96,8 +111,9 @@ def main():
         else:
             raise Exception()
     except:
-        print(get_errors().get('help_msg'))
+        print(utils.get_errors().get('help_msg'))
 
 
+# -------------------------------------------
 if __name__ == '__main__':
     main()
