@@ -9,7 +9,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     platforms=['Windows', 'Linux', 'MacOS'],
-    version='1.1.0',
+    version='1.1.1',
     url='https://github.com/djdany01/horasCLI',
     author='Daniel J. Pérez Nieto',
     author_email='djdany.djesus@gmail.com',

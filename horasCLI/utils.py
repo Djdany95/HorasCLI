@@ -16,18 +16,18 @@ def get_errors():
                      / __  // /_/ // /   / /_/ /(__  )/ /___ / /___ _/ /
                     /_/ /_/ \____//_/    \__,_//____/ \____//_____//___/
 
-                    Usage:
-                    horas -h | --help
+                    Uso:
+                    horasCLI -h | --help
                         'Muestra esta ayuda'
-                    horas -s | --show
+                    horasCLI -s | --show
                         'Abre el registro en Chrome si esta instalado o en la linea de comandos'
-                    horas -r | --reset
+                    horasCLI -r | --reset
                         'Resetea el registro'
-                    horas -n | --new <project name> <hours>
+                    horasCLI -n | --new <nombre del proyecto> <horas>
                         'Crea una fila en el registro con el dia de hoy'
-                    horas -n | --new <project name> <hours> <date (dd-mm)>
+                    horasCLI -n | --new <nombre del proyecto> <horas> <fecha (dd-mm)>
                         'Crea una fila en el registro con el dia que le pasemos'
-                    horas -d | --delete
+                    horasCLI -d | --delete
                         'Elimina la ultima fila del registro'
                     """
         chrome_error = """
@@ -48,17 +48,17 @@ def get_errors():
                     /_/ /_/ \____//_/    \__,_//____/ \____//_____//___/
 
                     Usage:
-                    horas -h | --help
+                    horasCLI -h | --help
                         'Shows this help'
-                    horas -s | --show
+                    horasCLI -s | --show
                         'Opens the schedule in Chrome if exists or as command line'
-                    horas -r | --reset
+                    horasCLI -r | --reset
                         'Resets the schedule'
-                    horas -n | --new <project name> <hours>
+                    horasCLI -n | --new <project name> <hours>
                         'Adds row to the schedule with today date'
-                    horas -n | --new <project name> <hours> <date (dd-mm)>
+                    horasCLI -n | --new <project name> <hours> <date (dd-mm)>
                         'Adds row to the schedule with the given date'
-                    horas -d | --delete
+                    horasCLI -d | --delete
                         'Deletes the last row added'
                     """
         chrome_error = """
