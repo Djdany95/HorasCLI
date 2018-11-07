@@ -33,13 +33,13 @@ def reset_horas():
     """Creates from 0 the new file based on language"""
     with open(schedule_file, 'w', encoding='UTF-8') as file:
         if("es" in utils.get_OS().get('lang')):
-            file.write('## Registro de Proyectos\n\n')
-            file.write('| Proyecto | Horas |   Dia  |\n')
-            file.write('|----------|:-----:|:------:|\n')
+            file.write('# Registro de Proyectos\n\n')
+            file.write('|Proyecto|Horas|Dia|\n')
+            file.write('|:------:|:---:|:-:|\n')
         else:
-            file.write('## Project Schedule\n\n')
-            file.write('| Project | Hours |   Day  |\n')
-            file.write('|---------|:-----:|:------:|\n')
+            file.write('# Project Schedule\n\n')
+            file.write('|Project|Hours|Day|\n')
+            file.write('|:-----:|:---:|:-:|\n')
         file.close()
 
 
@@ -67,12 +67,11 @@ def show_horas():
 def new_horas():
     """Add a new line with the info passed in arguments"""
     if num_args == 5:
-        nueva_fila = '| ' + sys.argv[2] + ' | ' + \
-            sys.argv[3] + 'h | ' + sys.argv[4] + ' |\n'
+        nueva_fila = '|' + sys.argv[2] + '|' + \
+            sys.argv[3] + 'h|' + sys.argv[4] + '|\n'
     elif num_args == 4:
-        nueva_fila = '| ' + \
-            sys.argv[2] + ' | ' + sys.argv[3] + \
-            'h | ' + now.strftime("%d/%m") + ' |\n'
+        nueva_fila = '|' + sys.argv[2] + '|' + \
+            sys.argv[3] + 'h|' + now.strftime("%d/%m") + '|\n'
     else:
         raise Exception()
 
