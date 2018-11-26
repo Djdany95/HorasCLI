@@ -29,6 +29,8 @@ def get_errors():
                         'Crea una fila en el registro con el dia que le pasemos'
                     horasCLI -d | --delete
                         'Elimina la ultima fila del registro'
+                    horasCLI -m | --manual
+                        '*SOLO EN WINDOWS* Abre el directorio del archivo en el explorador para editar manualmente'
                     """
         chrome_error = """
                             __  __                           ______ __     ____
@@ -60,6 +62,8 @@ def get_errors():
                         'Adds row to the schedule with the given date'
                     horasCLI -d | --delete
                         'Deletes the last row added'
+                    horasCLI -m | --manual
+                        '*ONLY IN WINDOWS* Open the folder where de file is to edit it manually'
                     """
         chrome_error = """
                             __  __                           ______ __     ____
@@ -80,13 +84,16 @@ def get_OS():
         # Linux
         chrome_path = '/usr/bin/google-chrome %s'
         lang = locale.getlocale(locale.LC_MESSAGES)[0]
+        explorer = False
     elif os() == "Darwin":
         # MacOs
         chrome_path = 'open -a /Applications/Google\ Chrome.app %s'
         lang = locale.getlocale(locale.LC_MESSAGES)[0]
+        explorer = False
     elif os() == 'Windows':
         # Windows
         chrome_path = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s"
         lang = locale.windows_locale[ctypes.windll.kernel32.GetUserDefaultUILanguage(
         )]
-    return {'chrome': chrome_path, 'lang': lang}
+        explorer = True
+    return {'chrome': chrome_path, 'lang': lang, 'explorer': explorer}

@@ -95,6 +95,15 @@ def delete_last_horas():
 
 
 # -------------------------------------------
+def edit_file_manual():
+    """*ONLY IN WINDOWS* Open the directory of the file to manual edit"""
+    if (utils.get_OS().get('explorer')):
+        os.startfile(Path.home())
+    else:
+        raise Exception()
+
+
+# -------------------------------------------
 def main():
     """Check if file exists and do what is passed in args"""
     check_horas_file()
@@ -107,6 +116,8 @@ def main():
             new_horas()
         elif (sys.argv[1] in ['-d', '--delete']):
             delete_last_horas()
+        elif (sys.argv[1] in ['-m', '--manual']):
+            edit_file_manual()
         else:
             raise Exception()
     except:
