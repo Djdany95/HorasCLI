@@ -45,7 +45,7 @@ def reset_horas():
 
 # -------------------------------------------
 def show_horas():
-    """If chrome installed, open the file on it, else shows it on the terminal"""
+    """If chrome installed, opens the file on it, else shows it on the terminal"""
     chrome_path = Path(utils.get_OS().get('chrome'))
     try:
         chrome_path.is_dir()
@@ -65,7 +65,7 @@ def show_horas():
 
 # -------------------------------------------
 def new_horas():
-    """Add a new line with the info passed in arguments"""
+    """Adds a new line with the info passed in arguments"""
     if num_args == 5:
         nueva_fila = '|' + sys.argv[2] + '|' + \
             sys.argv[3] + 'h|' + sys.argv[4] + '|\n'
@@ -95,8 +95,8 @@ def delete_last_horas():
 
 
 # -------------------------------------------
-def edit_file_manual():
-    """*ONLY IN WINDOWS* Open the directory of the file to manual edit"""
+def file_directory():
+    """*ONLY IN WINDOWS* Opens the directory of the file"""
     if (utils.get_OS().get('explorer')):
         os.startfile(Path.home())
     else:
@@ -104,8 +104,17 @@ def edit_file_manual():
 
 
 # -------------------------------------------
+def open_with_code():
+    """*ONLY IN WINDOWS* Opens the file with VSCode"""
+    if (utils.get_OS().get('explorer')):
+        os.system('code '+str(Path.home())+'\\projectsSchedule.md')
+    else:
+        raise Exception()
+
+
+# -------------------------------------------
 def main():
-    """Check if file exists and do what is passed in args"""
+    """Checks if the file exists and do what is passed in args"""
     check_horas_file()
     try:
         if (sys.argv[1] in ['-s', '--show']):
@@ -116,8 +125,10 @@ def main():
             new_horas()
         elif (sys.argv[1] in ['-d', '--delete']):
             delete_last_horas()
-        elif (sys.argv[1] in ['-m', '--manual']):
-            edit_file_manual()
+        elif (sys.argv[1] in ['-f', '--file']):
+            file_directory()
+        elif (sys.argv[1] in ['-c', '--code']):
+            open_with_code()
         else:
             raise Exception()
     except:

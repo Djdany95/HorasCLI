@@ -29,8 +29,10 @@ def get_errors():
                         'Crea una fila en el registro con el dia que le pasemos'
                     horasCLI -d | --delete
                         'Elimina la ultima fila del registro'
-                    horasCLI -m | --manual
-                        '*SOLO EN WINDOWS* Abre el directorio del archivo en el explorador para editar manualmente'
+                    horasCLI -f | --file
+                        '*SOLO EN WINDOWS* Abre el directorio del archivo en el explorador'
+                    horasCLI -c | --code
+                        '*SOLO EN WINDOWS* Abre el archivo en VSCode (Necesitas tenerlo instalado)'
                     """
         chrome_error = """
                             __  __                           ______ __     ____
@@ -63,7 +65,9 @@ def get_errors():
                     horasCLI -d | --delete
                         'Deletes the last row added'
                     horasCLI -m | --manual
-                        '*ONLY IN WINDOWS* Open the folder where de file is to edit it manually'
+                        '*ONLY IN WINDOWS* Opens the folder where the file'
+                    horasCLI -c | --code
+                        '*ONLY IN WINDOWS* Opens the file in VSCode (You need to have it installed)'
                     """
         chrome_error = """
                             __  __                           ______ __     ____
